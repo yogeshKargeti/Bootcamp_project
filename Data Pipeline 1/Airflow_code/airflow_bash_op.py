@@ -20,7 +20,8 @@ dag = DAG(
 )
 t1= BashOperator(
     task_id='run_spark_submit',
-    bash_command='spark-submit --class HelloWorld --master local[*] --conf spark.driver.extraJavaOptions="-Dcom.amazonaws.services.s3.enableV4" --conf spark.executor.extraJavaOptions="-Dcom.amazonaws.services.s3.enableV4" /home/ttn/IdeaProjects/EndProject3/target/scala-2.11/EndProject-assembly-0.1.jar',
+    bash_command='spark-submit --class HelloWorld --master local[*] --conf spark.driver.extraJavaOptions="-Dcom.amazonaws.services.s3.enableV4"
+    --conf spark.executor.extraJavaOptions="-Dcom.amazonaws.services.s3.enableV4" /home/ttn/IdeaProjects/EndProject3/target/scala-2.11/EndProject-assembly-0.1.jar',
     email= 'yogikargeti@gmail.com',
     email_on_failure= False,
     dag= dag
