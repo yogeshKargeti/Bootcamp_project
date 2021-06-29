@@ -1,0 +1,12 @@
+use ques2;
+create view top_product_oct as select product_id, sum(purchase_count) from ProductAnalysis_October group by product_id order by sum(purchase_count) desc limit 10;
+create view best_seller_oct as select product_id, sum(purchase_count) from ProductAnalysis_October group by product_id order by sum(purchase_count) desc limit 1;
+create view least_seller_oct as select product_id, sum(purchase_count) from ProductAnalysis_October group by product_id order by sum(purchase_count) asc limit 1;
+create view top_brand_oct as select brand, sum(purchase_count) from BrandAnalysis_October group by brand order by sum(purchase_count) desc limit 10;
+create view best_brand_oct as select brand, sum(purchase_count) from BrandAnalysis_October group by brand order by sum(purchase_count) desc limit 1;
+create view least_brand_oct as select brand, sum(purchase_count) from BrandAnalysis_October group by brand order by sum(purchase_count) asc limit 1;
+create view top_users_oct as select user_id, sum(purchase_count) from UserAnalysis_October group by user_id order by sum(purchase_count) desc limit 10;
+create view max_user_sale_oct as select user_id, sum(purchase_count) from UserAnalysis_October group by user_id order by sum(purchase_count) desc limit 1;
+create view least_user_sale_oct as select user_id, sum(purchase_count) from UserAnalysis_October group by user_id order by sum(purchase_count) asc limit 1;
+create view top_dates_sales_oct as select Date, sum(total_sales) from SalesAnalysis_October group by Date order by sum(total_sales) desc limit 10;
+
